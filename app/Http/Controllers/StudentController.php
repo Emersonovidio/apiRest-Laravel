@@ -22,7 +22,8 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Student::create($request->all());
+        
     }
 
     /**
@@ -32,9 +33,9 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function show(Student $student)
+    public function show($id)
     {
-        return $student;
+        return Student::findOrFail($id);
     }
 
     /**
